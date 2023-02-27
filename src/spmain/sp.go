@@ -552,7 +552,7 @@ func (asp *AcyclicSP) findSP(r *http.Request) error {
 			if asp.distTo[w] > newDistance {
 				// Edge to w is new best connection from source to w
 				asp.edgeTo[w] = e
-				asp.distTo[w] = asp.distTo[v] + asp.graph[v][w]
+				asp.distTo[w] = newDistance
 			}
 		}
 	}
