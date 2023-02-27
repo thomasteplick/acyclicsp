@@ -557,6 +557,9 @@ func (asp *AcyclicSP) findSP(r *http.Request) error {
 		}
 	}
 
+	// Create the stack to hold the Topological sort vertices
+	asp.stack = make([]int, vertices)
+
 	// depth-first search, recursive functions need to be declared first
 	var dfs func(v int)
 	marked := make([]bool, vertices)
@@ -584,7 +587,7 @@ func (asp *AcyclicSP) findSP(r *http.Request) error {
 	dfs(asp.source)
 
 	// Use LIFO order for the vertices by reversing the insertion order
-	for v := vertices - 1; v >= 0; v-- {
+	for v := n - 1; v >= 0; v-- {
 		relax(asp.stack[v])
 	}
 
