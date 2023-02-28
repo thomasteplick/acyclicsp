@@ -1,5 +1,5 @@
 # acyclicsp
-Acyclic edge-weighted digraphs shortest paths 
+Acyclic edge-weighted digraph shortest paths 
 
 This is a web application that can be accessed by addressing the web browser to http://127.0.0.1:8080/graphoptions.  It randomly generates 2-500 vertices in a
 Euclidean graph; the edge weights are the distances between vertices.  The graph endpoints, source vertex, and target vertex can be selected.  The path from
